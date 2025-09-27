@@ -21,7 +21,6 @@ const headerVariants: Variants = {
   },
 };
 
-const btnHover = { scale: 1.05, transition: { duration: 0.2 } };
 const btnTap = { scale: 0.95 };
 
 export default function Header({ theme, setTheme }: HeaderProps) {

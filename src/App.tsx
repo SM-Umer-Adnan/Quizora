@@ -13,7 +13,7 @@ import { useTheme } from "./providers/theme-provider";
 
 
 function App() {
-  const { theme, setTheme } = useTheme();
+  const { theme } = useTheme();
   const navigate = useNavigate(); // ✅ get navigate function
 
   const [input, setInput] = useState("");
@@ -216,7 +216,7 @@ function App() {
 
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
                   <div className="flex gap-2 items-center">
-                    {(["easy", "medium", "hard"] as const).map((level, idx) => (
+                    {(["easy", "medium", "hard"] as const).map((level) => (
                       <motion.button
                         key={level}
                         whileHover={btnHover}
