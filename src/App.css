@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "After Smile";
+  src: url("./assets/fonts/AfterSmile.otf")
+}
+
+.font-aftersmile {
+  font-style: "After Smile";
+}
