@@ -1,10 +1,10 @@
 export default function SkeletonLoading() {
   return (
     <div className="p-6 border rounded-2xl shadow-lg bg-white dark:bg-gray-800 animate-pulse space-y-4">
-      {/* Title Placeholder */}
+      {}
       <div className="h-6 sm:h-8 bg-gray-200 dark:bg-gray-700 rounded w-3/4 mx-auto"></div>
 
-      {/* Options/Content Grid */}
+      {}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {[...Array(4)].map((_, j) => (
           <div key={j} className="p-4 border border-gray-200 dark:border-gray-700 rounded-xl bg-gray-100 dark:bg-gray-700">
@@ -14,7 +14,7 @@ export default function SkeletonLoading() {
         ))}
       </div>
 
-      {/* Bottom Bar / Score Placeholder */}
+      {}
       <div className="h-5 bg-gray-200 dark:bg-gray-700 rounded w-1/2 mx-auto mt-4"></div>
     </div>
   );

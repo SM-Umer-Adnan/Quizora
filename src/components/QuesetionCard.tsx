@@ -38,12 +38,12 @@ export default function QuestionCard({
 
   return (
     <div className="p-5 border rounded-xl shadow-sm bg-white dark:bg-gray-900 transition hover:shadow-md">
-      {/* Question */}
+      {}
       <p className="font-semibold text-gray-800 dark:text-gray-100 mb-4 text-lg">
         {questionIndex + 1}. {question.question}
       </p>
 
-      {/* Options */}
+      {}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         {question.options.map((option, oIndex) => (
           <motion.button
@@ -74,7 +74,7 @@ export default function QuestionCard({
         ))}
       </div>
 
-      {/* Hint */}
+      {}
       {question.hint && (
         <div className="mt-5">
           <button

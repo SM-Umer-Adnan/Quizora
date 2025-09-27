@@ -1,23 +1,24 @@
 import { useEffect, useState } from "react";
 
 interface TimerProps {
-  duration: number; // in seconds
+  duration: number; 
   onTimeUp: () => void;
-  resetKey: number; // changes every new question to reset timer
+  resetKey?: number; 
 }
 
 export default function Timer({ duration, onTimeUp, resetKey }: TimerProps) {
   const [timeLeft, setTimeLeft] = useState(duration);
 
   useEffect(() => {
-    setTimeLeft(duration); // reset when resetKey changes
-  }, [resetKey, duration]);
+    setTimeLeft(duration);
+  }, [duration, resetKey]);
 
   useEffect(() => {
     if (timeLeft <= 0) {
       onTimeUp();
       return;
     }
+
     const interval = setInterval(() => {
       setTimeLeft((t) => t - 1);
     }, 1000);
@@ -26,7 +27,7 @@ export default function Timer({ duration, onTimeUp, resetKey }: TimerProps) {
   }, [timeLeft, onTimeUp]);
 
   return (
-    <div className="text-sm font-medium text-gray-600">
+    <div className="text-sm font-medium text-gray-600 dark:text-gray-200">
       ⏳ {timeLeft}s left
     </div>
   );

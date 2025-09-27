@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import Confetti from "react-confetti";
-import { useWindowSize } from "react-use"; // optional hook for responsive confetti
+import { useWindowSize } from "react-use"; 
 
 interface ScoreEntry {
   name: string;
@@ -12,9 +12,8 @@ interface ScoreEntry {
 
 export default function Leaderboard() {
   const [scores, setScores] = useState<ScoreEntry[]>([]);
-  const { width, height } = useWindowSize(); // for confetti sizing
+  const { width, height } = useWindowSize(); 
 
-  // Live update from localStorage
   useEffect(() => {
     const updateScores = () => {
       const saved = localStorage.getItem("askme-leaderboard");
@@ -29,7 +28,6 @@ export default function Leaderboard() {
     };
   }, []);
 
-  // Sort scores by highest points first
   const sortedScores = [...scores].sort((a, b) => b.score - a.score);
 
   const containerVariants: Variants = {
@@ -56,7 +54,7 @@ export default function Leaderboard() {
 
   return (
     <div className="mt-8 p-6 rounded-3xl shadow-xl bg-white dark:bg-gray-900 max-w-md mx-auto relative">
-      {/* Confetti for top scorer */}
+      {}
       {sortedScores[0] && <Confetti width={width} height={height} numberOfPieces={250} recycle={false} />}
 
       <h3 className="text-2xl font-bold mb-6 text-center text-black-600 dark:text-white-400">

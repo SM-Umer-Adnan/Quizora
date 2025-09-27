@@ -1,12 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
 
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 
 :root {
   font-family: 'Nunito', 'Poppins', sans-serif;
@@ -21,7 +18,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 
 @layer base {
   :root {

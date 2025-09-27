@@ -18,7 +18,7 @@ const ThemeProviderContext = createContext<ThemeContextInterface | undefined>(
 );
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  // Detect system preference if no theme stored
+
   const storedTheme = localStorage.getItem("askme-ui-theme") as ThemeType | null;
   const prefersDark =
     window.matchMedia &&
@@ -28,14 +28,12 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     storedTheme ?? (prefersDark ? "dark" : "light"),
   );
 
-  // Apply theme to <html>
   useEffect(() => {
     localStorage.setItem("askme-ui-theme", theme);
     document.documentElement.classList.remove("light", "dark");
     document.documentElement.classList.add(theme);
   }, [theme]);
 
-  // Sync across tabs
   useEffect(() => {
     const syncTheme = (e: StorageEvent) => {
       if (e.key === "askme-ui-theme" && e.newValue) {
@@ -48,7 +46,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
 
   return (
     <ThemeProviderContext.Provider value={{ theme, setTheme }}>
-      {/* Smooth theme transition */}
+      {}
       <div className="transition-colors duration-300 ease-in-out">
         {children}
       </div>
