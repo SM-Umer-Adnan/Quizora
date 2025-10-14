@@ -11,6 +11,8 @@ import Spinner from "./components/ui/spinner";
 import { useTheme } from "./providers/theme-provider";
 import DownloadDropdown from "./components/DownloadDropdown";
 import Timer from "./components/Timer";
+import AdsterraBanner from "./components/AdsterraBanner";
+
 
 function App() {
   const { theme } = useTheme();
@@ -148,18 +150,32 @@ const [customTime, setCustomTime] = useState(60);
             >
          <motion.div className="text-center mb-12 px-4 sm:px-0">
   {}
- <motion.h2
-      initial={{ opacity: 0, y: -20, scale: 0.95 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      transition={{ type: "spring", stiffness: 260, damping: 20, duration: 0.6 }}
-      className="text-4xl sm:text-5xl md:text-6xl font-semibold mb-4"
-      style={{
-        fontFamily: "'Nunito', sans-serif",
-        color: theme === "dark" ? "#FFFFFF" : "#000000", 
-      }}
-    >
-      Exercise and Test Generator
-    </motion.h2>
+<motion.h2
+  initial={{ opacity: 0, y: -20, scale: 0.95 }}
+  animate={{ opacity: 1, y: 0, scale: 1 }}
+  transition={{
+    type: "spring",
+    stiffness: 260,
+    damping: 20,
+    duration: 0.6,
+  }}
+  className="text-4xl sm:text-5xl md:text-6xl font-semibold mb-4 text-center"
+  style={{
+    fontFamily: "'Nunito', sans-serif",
+    color: theme === "dark" ? "#FFFFFF" : "#000000",
+  }}
+>
+  Exercise and Test Generator
+</motion.h2>
+
+{/* Adsterra Banner (Responsive Centered) */}
+<div className="flex justify-center my-6">
+  <div className="w-full max-w-[728px] px-4 sm:px-0">
+    <AdsterraBanner />
+  </div>
+</div>
+
+
 
   {}
   <motion.p
@@ -288,6 +304,10 @@ const [customTime, setCustomTime] = useState(60);
   >
     Quiz Completed 🎉
   </motion.h2>
+  <div className="mt-8">
+  <AdsterraBanner />
+</div>
+
 
   {}
   <motion.p
